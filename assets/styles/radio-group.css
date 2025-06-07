@@ -1,0 +1,16 @@
+input {
+    border-color: #b00fb3;
+
+    margin-top: 100px;
+      text-align: center;
+    color: black;
+    background-color: #ffffff;
+}
+
+legend {
+    color: black;
+}
+
+label {
+    color: black;
+}

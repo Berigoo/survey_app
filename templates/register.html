@@ -1,0 +1,58 @@
+<style>
+ * {
+     font-size: 0.85rem;
+ }
+
+ h2 {
+     text-align: center;
+     color: black;
+     }
+ 
+ a {
+     color: #b00fb3;
+     text-decoration: none;
+     cursor:pointer;
+ }
+
+ text-input, radio-group-input, password-input, select-group-input {
+     background-color: white;
+ }
+
+ :host([hidden]) {
+     display: none
+ }
+</style>
+
+<div style="padding: 100px; margin-top: auto; margin-bottom: auto">
+    <h2>Daftar</h2>
+    <form>
+	<fieldset>
+	    <div class="grid">
+		<text-input label="Alamat Email" placeholder="Masukan Alamat Email" name="email"></text-input>
+		<text-input label="Tanggal Lahir" placeholder="Tanggal Lahir" name="bdate"></text-input>
+	    </div>
+	    <div class="grid">
+		<password-input label="Kata Sandi" placeholder="Masukan Kata Sandi" name="password"></password-input>
+		<div>
+		    <radio-group-input title="Jenis kelamin" name="jenis_kelamin" options="['Laki - Laki', 'Perempuan']" name="gender"></radio-group-input>
+		</div>
+	    </div>
+	    <div class="grid">
+		<password-input label="Confirm Password" placeholder="Confirm Password" name="password_confirmation"></password-input>
+		<select-group-input name="provinsi" options="['Aceh', 'Sumatera Utara', 'Sumater Barat', 'Sumatera Selatan', 'Jawa Barat', 'Jawa Tengah']" label="Provinsi" name="province" default="Pilih Provinsi"></select-group-input>
+	    </div>
+	    <div class="grid">
+		<text-input label="Nama Depan" placeholder="Nama Depan" name="name1"></text-input>
+		<select-group-input name="pendidikan_terakhir" options="['S3', 'S2', 'S1/D4', 'D3', 'D2', 'D1', 'SMA/Sederajat', 'SMP/Sederajat', 'SD/Sederajat', 'Tidak Sekolah']" label="Pendidikan Terakhir" name="ed" default="Pendidikan Terakhir"></select-group-input>
+	    </div>
+	    <div class="grid">
+		<text-input label="Nama Belakang" placeholder="Nama Belakang" name="name2"></text-input>
+		<select-group-input name="pekerjaan" options="['Tidak Bekerja', 'Kesehatan dan Kedokteran', 'Pertanian', 'Pendidikan', 'Desain', 'Teknologi']" label="Pekerjaan" name="job" default="Pekerjaan"></select-group-input>
+	    </div>
+	    <p style="color: black">Lupa Kata Sandi?</p>
+	</fieldset>
+	<submit-button-input value="Daftar"></submit-button-input>
+    </form>
+    <br/>
+    <p style="color: black; text-align: center">Sudah Punya Akun? <a id="to-login">Sign In</a></p>
+</div>

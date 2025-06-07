@@ -1,0 +1,25 @@
+<style>
+ a {
+     color: #b00fb3;
+     text-decoration: none;
+     cursor:pointer;
+ }
+
+ :host([hidden]) {
+     display: none
+ } 
+</style>
+
+<div style="padding: 100px; margin-top: auto; margin-bottom: auto;" id="main">
+    <form>
+	<fieldset>
+	    <text-input label="Alamat Email" placeholder="Masukan Alamat Email" name="email"></text-input>
+	    <password-input label="Kata Sandi" placeholder="Masukan Kata Sandi" name="password"></password-input>
+	    <p style="color: black">Lupa Kata Sandi?</p>
+	</fieldset>
+	<submit-button-input value="Login"></submit-button-input>
+    </form>
+    <p style="color: black; text-align: center">Dengan membuat akun. Anda menyetujui <a >Ketentuan Layanan</a> dan <a >Kebijakan Privasi Kami</a></p>
+    <br/>
+    <p style="color: black; text-align: center">Belum Punya Akun? <a id="to-daftar">Daftar</a></p>
+</div>
