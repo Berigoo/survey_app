@@ -30,6 +30,7 @@
       <h1 class="text-3xl font-bold text-black">Atur Reward</h1>
     </header>
 
+<<<<<<< HEAD
     <!-- 2. Horizontal Group (Icon 30% + Slider 70%) -->
     <div class="flex items-center gap-4 mb-8 w-full">
       <!-- Icon (30% width) -->
@@ -54,6 +55,18 @@
         </div>
       </div>
     </div>
+=======
+            <!-- Slider (70% width) - Daisy UI themed -->
+            <div class="w-[70%] px-4">
+		<input type="range" min="0" max="100" value="0" class="range range-primary fill-[#B00FB3]" id="amount"/>
+            </div>
+	</div>
+
+	<!-- 3. Centered Text Display (Large) -->
+	<div class="text-center text-2xl font-semibold text-[#B00FB3] mb-4" id="slider_val">
+            IDR1.000.000
+	</div>
+>>>>>>> 499fd306f29f1d2313715996164ae3b066a2de44
 
     <!-- Centered Text Display (Large) -->
     <div
@@ -63,6 +76,7 @@
       IDR100.000
     </div>
 
+<<<<<<< HEAD
     <!-- 4. Smaller Text Display -->
     <div class="text-center text-red-600 mb-8">
       Akan dibagi secara rata oleh responden
@@ -152,4 +166,35 @@
       });
     </script>
   </body>
+=======
+	<!-- 5. Submit Button -->
+	<div class="flex justify-center">
+            <button class="btn bg-[#B00FB3] border-black hover:bg-primary/90 hover:border-primary/90 text-white px-8" id="done">
+		<a href="home.html">Done</a>
+            </button>
+	</div>
+	<script>
+	 document.getElementById('amount').addEventListener('change', (e) => {
+	     document.getElementById('slider_val').textContent = 'IDR' + e.target.value + '.000';
+	 });
+
+	 document.getElementById('done').addEventListener('click', (e) => {
+	     localStorage.setItem('s_amount', document.getElementById('amount').value * 1000);
+	     
+	     const obj = {
+		 title: localStorage.getItem('s_title'),
+		 category: localStorage.getItem('s_category'),
+		 description: localStorage.getItem('s_description'),
+		 respondens: localStorage.getItem('s_respondens'),
+		 isReward: localStorage.getItem('s_isReward'),
+		 amount: localStorage.getItem('s_amount')
+	     };
+	     const surveys = JSON.parse(localStorage.getItem('surveys'));
+	     surveys.push(obj);
+	     localStorage.setItem('surveys', JSON.stringify(surveys));		 	     
+	     window.location.replace('home.html');
+	 });
+	</script>
+    </body>
+>>>>>>> 499fd306f29f1d2313715996164ae3b066a2de44
 </html>

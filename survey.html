@@ -21,6 +21,7 @@
       </div>
     </div>
 
+<<<<<<< HEAD
     <!-- Centered Header -->
     <header class="text-center mb-8">
       <h1 class="text-3xl font-bold">Buat Survey</h1>
@@ -133,4 +134,103 @@
       });
     </script>
   </body>
+=======
+	<!-- Left-aligned Form -->
+	<div class="max-w-2xl mx-auto">
+            <!-- Image Placeholder -->
+            <div class="mb-4">
+		<div class="w-32 h-32 bg-gray-300 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-500">Image Placeholder</span>
+		</div>
+            </div>
+
+            <!-- Text Input -->
+            <div class="mb-4">
+		<label class="label">
+                    <span class="label-text">Judul Survey</span>
+		</label>
+		<input type="text" placeholder="Type here" class="input input-bordered w-full"  id="title"/>
+            </div>
+
+            <!-- Select Input -->
+            <div class="mb-4 w-80">
+		<label class="label">
+                    <span class="label-text">Kategori</span>
+		</label>
+		<select class="select select-bordered w-full" id="category">
+                    <option disabled selected>Choose an option</option>
+                    <option>Makanan</option>
+                    <option>Fashion</option>
+                    <option>Teknologi</option>
+		</select>
+            </div>
+
+            <!-- Large Text Input -->
+            <div class="mb-4">
+		<label class="label">
+                    <span class="label-text">Deskripsi Survey</span>
+		</label>
+		<textarea class="textarea textarea-bordered w-full" placeholder="Type here" id="description"></textarea>
+            </div>
+
+            <!-- Slider -->
+            <div class="mb-4 w-80">
+		<label class="label">
+                    <span class="label-text">Jumlah Responden</span>
+		</label>
+		<div class="flex mb-8 items-left">
+		    <input type="range" min="0" max="100" value="50" class="range range-[#B00FB3]]" id="respondens"/>
+		    <span id="slider_val">50</span>
+		</div>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="mb-8">
+		<label class="label cursor-pointer justify-start gap-2">
+                    <input type="checkbox" checked="checked" class="checkbox checkbox-[#B00FB3]"  id="isReward"/>
+                    <span class="label-text">Give Rewards</span>
+		</label>
+            </div>
+
+            <!-- Right-aligned Submit Button -->
+            <div class="flex justify-end">
+		<button class="btn bg-[#B00FB3] text-white" id="btn_next">Next</button>
+            </div>
+	</div>
+	<script>
+	 document.getElementById('btn_next').addEventListener('click', (e) => {
+	     const title = document.getElementById('title').value;
+	     const category = document.getElementById('category').value;
+	     const description = document.getElementById('description').value;
+	     const respondens = document.getElementById('respondens').value;
+	     const isReward = document.getElementById('isReward').checked;
+	     localStorage.setItem('s_title', title);
+	     localStorage.setItem('s_category', category);
+	     localStorage.setItem('s_description', description);
+	     localStorage.setItem('s_respondens', respondens);
+	     localStorage.setItem('s_isReward', isReward);
+
+	     if (isReward == true){
+		 window.location.replace("reward.html");
+	     } else {
+		 const obj = {
+		     title: title,
+		     category: category,
+		     description: description,
+		     respondens: respondens,
+		     isReward: isReward,
+		 };
+		 const surveys = JSON.parse(localStorage.getItem('surveys'));
+		 surveys.push(obj);
+		 localStorage.setItem('surveys', JSON.stringify(surveys));		 
+		 window.location.replace("home.html");		 
+	     }
+	 });
+
+	 document.getElementById('respondens').addEventListener('change', (e) => {
+	     document.getElementById('slider_val').textContent = e.target.value;
+	 });
+	</script>
+    </body>
+>>>>>>> 499fd306f29f1d2313715996164ae3b066a2de44
 </html>
