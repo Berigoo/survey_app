@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+</head>
+
+<!-- CSS Link -->
+ <link rel="stylesheet" href="assets/styles/style.css">
+<body class=" flex items-center justify-center min-h-screen text-black">
+
+  <div class="w-screen h-screen bg-white shadow-lg flex">
+
+    <!-- Logo Section (tulisan IsiKv) -->
+    <div class="flex flex-col items-center justify-center w-3/4 bg-[#B00FB3]">
+      <img src="assets/images/logo.png" class="w-1/2" alt="IsiKv Logo">
+    </div>
+
+    <!-- Form Section -->
+    <div class="flex flex-col justify-center w-full p-20">
+      <h2 class="text-4xl text-center text-black font-medium mb-4">Login</h2>
+      
+      <form action="#" method="POST">
+        <!-- Email Field -->
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium mb-2">Alamat Email</label>
+          <input type="email" id="email" name="email" class="input input-bordered border-[#B00FB3] focus:border-[#B00FB3] focus:outline-none w-full rounded-xl" placeholder="Email" required>
+        </div>
+
+        <!-- Password Field -->
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-medium mb-2">Password</label>
+          <input type="password" id="password" name="password" class="input input-bordered border-[#B00FB3] focus:border-[#B00FB3] focus:outline-none w-full rounded-xl" placeholder="Password" required>
+        </div>
+
+        <!-- Lupa Kata Sandi -->
+        <div class="mb-4">
+          <a href="#" class="text-sm hover:underline">Lupa Kata Sandi?</a>
+        </div>
+
+        <!-- Login Button -->
+        <button class="btn btn-primary w-full mb-4 rounded-xl">Login</button>
+
+        <!-- Footer Text -->
+        <div class="text-sm text-center text-black">
+          <p>Dengan membuat akun, Anda menyetujui <a href="#" class="text-pink hover:underline">Ketentuan Layanan</a> <br> dan <a href="#" class="text-pink hover:underline">Kebijakan Privasi</a>.</p>
+        </div>
+
+        <!-- Daftar Link -->
+        <div class="text-sm text-center mt-2">
+          <p>Belum Punya Akun? <a href="register.html" class="text-pink hover:underline">Daftar</a></p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+</body>
+</html>

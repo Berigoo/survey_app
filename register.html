@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+</head>
+
+<!-- CSS Link -->
+ <link rel="stylesheet" href="assets/styles/style.css">
+<body class=" flex items-center justify-center min-h-screen text-black">
+
+  <div class="w-screen h-screen bg-white shadow-lg flex">
+
+    <!-- Logo Section (tulisan IsiKv) -->
+    <div class="flex flex-col items-center justify-center w-3/4 bg-[#B00FB3]">
+      <img src="assets/images/logo.png" class="w-1/2" alt="IsiKv Logo">
+    </div>
+
+    <!-- Form Section -->
+    <div class="flex flex-col justify-center w-full p-20">
+      <h2 class="text-4xl text-center text-black font-medium mb-4">Daftar</h2>
+      
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Email -->
+      <div>
+        <label class="label">
+          <span class="label-text">Alamat Email</span>
+        </label>
+        <input type="email" placeholder="email@example.com" class="input input-bordered w-full border-[#B00FB3] rounded-xl" />
+      </div>
+
+      <!-- Tanggal Lahir -->
+      <div>
+        <label class="label">
+          <span class="label-text">Tanggal Lahir</span>
+        </label>
+        <input type="text" placeholder="1 Januari 2000" class="input input-bordered w-full border-[#B00FB3] rounded-xl" />
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label class="label">
+          <span class="label-text">Password</span>
+        </label>
+        <input type="password" class="input input-bordered w-full border-[#B00FB3] rounded-xl" />
+      </div>
+
+      <!-- Jenis Kelamin -->
+      <div>
+        <label class="label mb-2">
+          <span class="label-text">Jenis Kelamin</span>
+        </label>
+        <div class="flex items-center gap-4">
+          <label class="label cursor-pointer">
+            <input type="radio" name="gender" class="radio border-[#B00FB3] checked:bg-[#B00FB3] rounded-xl" />
+            <span class="ml-2">Laki - laki</span>
+          </label>
+          <label class="label cursor-pointer">
+            <input type="radio" name="gender" class="radio border-[#B00FB3] checked:bg-[#B00FB3] rounded-xl" />
+            <span class="ml-2">Perempuan</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div>
+        <label class="label">
+          <span class="label-text">Confirm Password</span>
+        </label>
+        <input type="password" class="input input-bordered w-full border-[#B00FB3] rounded-xl" />
+      </div>
+
+      <!-- Provinsi -->
+      <div>
+        <label class="label">
+          <span class="label-text">Provinsi</span>
+        </label>
+        <select class="select select-bordered w-full border-[#B00FB3] rounded-xl">
+          <option>Aceh</option>
+          <option>Jawa Barat</option>
+        </select>
+      </div>
+
+      <!-- Nama Depan -->
+      <div>
+        <label class="label">
+          <span class="label-text">Nama Depan</span>
+        </label>
+        <input type="text" placeholder="Jane" class="input input-bordered w-full border-[#B00FB3] rounded-xl" />
+      </div>
+
+      <!-- Pendidikan Terakhir -->
+      <div>
+        <label class="label">
+          <span class="label-text">Pendidikan Terakhir</span>
+        </label>
+        <select class="select select-bordered w-full border-[#B00FB3] rounded-xl">
+          <option disabled selected>Pendidikan Terakhir</option>
+          <option>SMA</option>
+          <option>S1</option>
+        </select>
+      </div>
+
+      <!-- Nama Belakang -->
+      <div>
+        <label class="label">
+          <span class="label-text">Nama Belakang</span>
+        </label>
+        <input type="text" placeholder="Doe" class="input input-bordered w-full border-[#B00FB3] rounded-xl" />
+      </div>
+
+      <!-- Pekerjaan -->
+      <div>
+        <label class="label">
+          <span class="label-text">Pekerjaan</span>
+        </label>
+        <select class="select select-bordered w-full border-[#B00FB3] rounded-xl">
+          <option disabled selected>Pekerjaan</option>
+          <option>Pelajar</option>
+          <option>Freelancer</option>
+        </select>
+      </div>
+
+      <!-- Tombol Daftar -->
+      <div class="col-span-1 md:col-span-2 mt-4">
+        <button class="btn btn-primary w-full text-white rounded-xl">Daftar</button>
+      </div>
+
+      <!-- Sudah Punya Akun -->
+      <div class="col-span-1 md:col-span-2 text-center text-sm mt-2">
+        Sudah Punya Akun? <a href="login.html" class="text-[#B00FB3] font-medium">Login </a>
+      </div>
+    </form>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+</body>
+</html>

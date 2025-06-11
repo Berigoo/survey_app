@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+</head>
+
+<!-- CSS Link -->
+<link rel="stylesheet" href="assets/styles/style.css">
+    <body class="bg-[#F9F9F9]">
+
+  <!-- Navbar -->
+  <div class="navbar bg-base-100 shadow-sm px-20">
+    <div class="flex-1">
+      <a class="text-2xl font-bold text-[#B00FB3]">IsiK<span class="text-yellow-400">✓</span></a>
+    </div>
+    <div class="flex gap-6 items-center">
+      <a class="btn btn-ghost btn-sm text-[#B00FB3] hover:bg-transparent">Home</a>
+      <a class="btn btn-ghost btn-sm text-gray-400 hover:bg-transparent cursor-not-allowed">Reward</a>
+      <a class="btn btn-ghost btn-sm text-gray-400 hover:bg-transparent cursor-not-allowed">Profile</a>
+      <a class="btn btn-ghost btn-sm text-red-500">Logout</a>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="flex justify-center mt-6 px-10">
+    <div role="tablist" class="tabs tabs-boxed bg-transparent">
+      <a role="tab" class="tab text-[#B00FB3] font-medium tab-active">Semua</a>
+      <a role="tab" class="tab text-[#B00FB3] font-medium">Makanan</a>
+      <a role="tab" class="tab text-[#B00FB3] font-medium">Fashion</a>
+      <a role="tab" class="tab text-[#B00FB3] font-medium">Teknologi</a>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="flex justify-end px-6 mt-4">
+    <label class="input input-bordered flex items-center gap-2 w-64 border-[#B00FB3]">
+      <input type="text" class="grow" placeholder="Search" />
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16.65 16.65A7.5 7.5 0 1116.65 2a7.5 7.5 0 010 15z"/>
+      </svg>
+    </label>
+  </div>
+
+  <!-- List Cards -->
+  <div class="px-6 mt-6 space-y-4">
+    <!-- Card 1 (Selected) -->
+    <div class="card card-bordered border-[#B00FB3] bg-white shadow rounded-lg p-4">
+      <div class="flex gap-4">
+        <img src="https://source.unsplash.com/80x80/?laptop" class="rounded-xl w-24 h-24 object-cover" />
+        <div class="flex flex-col justify-between flex-1">
+          <div>
+            <h2 class="card-title text-base text-gray-800">Survey Kepuasan Terhadap Kinerja IT Support di Unsika</h2>
+            <p class="text-sm text-gray-600 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+          </div>
+          <div class="flex items-center gap-4 mt-2 text-sm text-gray-600">
+            <div class="flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>50/100</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-[#B00FB3] font-semibold">IDR10.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card bg-white shadow rounded-lg p-4">
+      <div class="flex gap-4">
+        <img src="https://source.unsplash.com/80x80/?laptop" class="rounded-xl w-24 h-24 object-cover" />
+        <div class="flex flex-col justify-between flex-1">
+          <div>
+            <h2 class="card-title text-base text-gray-800">Survey Kepuasan Terhadap Kinerja IT Support di Unsika</h2>
+            <p class="text-sm text-gray-600 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+          </div>
+          <div class="flex items-center gap-4 mt-2 text-sm text-gray-600">
+            <div class="flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>50/100</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-[#B00FB3] font-semibold">IDR10.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 (copy dari card 2) -->
+    <div class="card bg-white shadow rounded-lg p-4">
+      <div class="flex gap-4">
+        <img src="https://source.unsplash.com/80x80/?laptop" class="rounded-xl w-24 h-24 object-cover" />
+        <div class="flex flex-col justify-between flex-1">
+          <div>
+            <h2 class="card-title text-base text-gray-800">Survey Kepuasan Terhadap Kinerja IT Support di Unsika</h2>
+            <p class="text-sm text-gray-600 mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+          </div>
+          <div class="flex items-center gap-4 mt-2 text-sm text-gray-600">
+            <div class="flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>50/100</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-[#B00FB3] font-semibold">IDR10.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Action Button -->
+  <button class="btn btn-circle bg-[#B00FB3] text-white fixed bottom-6 right-6 shadow-lg hover:bg-[#a00da5]">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+    </svg>
+  </button>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  </body>
+</html>

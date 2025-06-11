@@ -1,0 +1,23 @@
+.bg-pink { 
+    background-color: #B00FB3 !important;
+}
+
+.text-pink { 
+    color: #B00FB3 !important;
+}
+
+.border-pink{
+    color: #B00FB3 !important;
+    border: 1px #B00FB3 ;
+}
+
+.btn-primary{
+    background-color: #BCBCBC !important;
+    color: black !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    background-color: #B00FB3 !important;
+    color: white !important;
+}
