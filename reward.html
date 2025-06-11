@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Icon Layout</title>
+	<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    </head>
+    <body class="p-4 max-w-2xl mx-auto">
+	<!-- Navbar -->
+	<div class="navbar bg-base-100 shadow-sm px-20">
+	    <div class="flex-1">
+		<a class="text-2xl font-bold text-[#B00FB3]" href="home.html"><--</a>
+	    </div>
+	</div>
+
+	<!-- 1. Centered Header -->
+	<header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-black">Atur Reward</h1>
+	</header>
+
+	<!-- 2. Horizontal Group (Icon 30% + Slider 70%) -->
+	<div class="flex items-center gap-4 mb-8 w-full">
+            <!-- Icon (30% width) -->
+            <div class="w-[30%] flex justify-center">
+                    <!-- <i class="fas fa-sliders-h text-3xl"></i> -->
+		    <img src="assets/images/coin.png"/>
+            </div>
+
+            <!-- Slider (70% width) - Daisy UI themed -->
+            <div class="w-[70%] px-4">
+		<input type="range" min="0" max="100" value="50" class="range range-primary fill-[#B00FB3]"/>
+            </div>
+	</div>
+
+	<!-- 3. Centered Text Display (Large) -->
+	<div class="text-center text-2xl font-semibold text-[#B00FB3] mb-4">
+            IDR1.000.000
+	</div>
+
+	<!-- 4. Smaller Text Display -->
+	<div class="text-center text-red-600 mb-8">
+            Akan dibagi secara rata oleh responden
+	</div>
+
+	<!-- 5. Submit Button -->
+	<div class="flex justify-center">
+            <button class="btn bg-[#B00FB3] border-black hover:bg-primary/90 hover:border-primary/90 text-white px-8">
+		<a href="home.html">Done</a>
+            </button>
+	</div>
+    </body>
+</html>
