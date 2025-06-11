@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+</head>
+
+<!-- CSS Link -->
+<link rel="stylesheet" href="assets/styles/style.css" />
+
+<body class="bg-[#F9F9F9]">
+    <!-- Navbar -->
+
+    <div class="navbar shadow-sm px-6 md:px-20 text-white shadow">
+        <!-- Logo - Left -->
+        <div class="flex-none">
+            <a class="text-2xl font-bold text-[#B00FB3]">
+                IsiK<span class="text-yellow-400">✓</span>
+            </a>
+        </div>
+
+        <!-- Navigation - Center -->
+        <div class="hidden md:flex flex-1 gap-6 items-center justify-center">
+            <a href="home.html" class="tab !text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 9.75L12 3l9 6.75M4.5 10.5v7.5A1.5 1.5 0 006 19.5h12a1.5 1.5 0 001.5-1.5v-7.5" />
+                </svg>
+                Home
+            </a>
+            <a href="earning.html" class="tab !text-[#B00FB3]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12.75A9 9 0 113 12.75 9 9 0 0121 12.75z" />
+                </svg>
+                Reward
+            </a>
+            <a href="profile.html" class="tab !text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5.121 17.804A10.97 10.97 0 0112 15c2.042 0 3.937.613 5.505 1.657M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Profile
+            </a>
+        </div>
+
+        <!-- Logout - Right -->
+        <div class="flex-none">
+            <a href="login.html" class="tab !text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Logout
+            </a>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 m-6">
+
+        <!-- E-Wallet Card -->
+        <div class="md:col-span-2 bg-white rounded-xl shadow p-6 flex items-center">
+            <img src="assets/images/coin.png" alt="Coin" class="w-16 h-16 mr-4" />
+            <div>
+                <p class="text-xl font-medium text-gray-700">E-Wallet</p>
+                <p class="text-2xl font-bold text-black">50.000</p>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col gap-4">
+            <button
+                class="flex items-center justify-center gap-2 bg-white rounded-xl shadow px-4 py-3 font-medium hover:bg-gray-50">
+                <img src="https://img.icons8.com/ios-filled/24/money.png" alt="Top Up" />
+                Top Up E–Wallet
+            </button>
+            <button
+                class="flex items-center justify-center gap-2 bg-white rounded-xl shadow px-4 py-3 font-medium hover:bg-gray-50">
+                <img src="https://img.icons8.com/ios-filled/24/down-squared.png" alt="Tarik" />
+                Tarik E–Wallet
+            </button>
+        </div>
+    </div>
+
+    <!-- Transaction History -->
+    <div class="max-w-4xl mx-auto mt-8 bg-white rounded-xl shadow">
+        <h2 class="text-lg m-4 pt-4 font-semibold text-black">Riwayat Transaksi</h2>
+        <hr>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="border-b">
+                        <th class="py-2 px-4 text-gray-700 font-medium">Jumlah Transaksi</th>
+                        <th class="py-2 px-4 text-gray-700 font-medium">Tanggal Transaksi</th>
+                        <th class="py-2 px-4 text-gray-700 font-medium">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="py-2 px-4">Rp50.000</td>
+                        <td class="py-2 px-4">12-02-25</td>
+                        <td class="py-2 px-4">
+                            <span class="text-red-600 bg-red-100 px-3 py-1 rounded-full text-sm">Tarik</span>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4">Rp20.000</td>
+                        <td class="py-2 px-4">12-02-25</td>
+                        <td class="py-2 px-4">
+                            <span class="text-green-600 bg-green-100 px-3 py-1 rounded-full text-sm">Masuk</span>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4">Rp35.000</td>
+                        <td class="py-2 px-4">12-02-25</td>
+                        <td class="py-2 px-4">
+                            <span class="text-green-600 bg-green-100 px-3 py-1 rounded-full text-sm">Masuk</span>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4">Rp12.000</td>
+                        <td class="py-2 px-4">12-02-25</td>
+                        <td class="py-2 px-4">
+                            <span class="text-red-600 bg-red-100 px-3 py-1 rounded-full text-sm">Tarik</span>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2 px-4">Rp5.000</td>
+                        <td class="py-2 px-4">12-02-25</td>
+                        <td class="py-2 px-4">
+                            <span class="text-green-600 bg-green-100 px-3 py-1 rounded-full text-sm">Masuk</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4">Rp10.000</td>
+                        <td class="py-2 px-4">12-02-25</td>
+                        <td class="py-2 px-4">
+                            <span class="text-green-600 bg-green-100 px-3 py-1 rounded-full text-sm">Masuk</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="btn btn-circle bg-[#B00FB3] text-white fixed bottom-6 right-6 shadow-lg hover:bg-[#a00da5]">
+        <a href="survey.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+        </a>
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Load Heroicons -->
+    <script src="https://unpkg.com/heroicons@2.0.13/20/solid/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pertanyaan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .question-box {
+        background: linear-gradient(to right, #f9fafb, #f4fefc);
+        border: 2px dashed #d1d5db;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .question-box.active {
+        border: 2px solid #a855f7;
+        box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.2);
+      }
+
+      .remove-btn {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        font-size: 1.25rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#f6f4f0] p-4 max-w-xl mx-auto">
+    <!-- Title -->
+    <h1 class="text-center text-2xl font-bold mb-6">Rasa Kacang Ijo</h1>
+
+    <!-- Question container -->
+    <div id="questions-container">
+      <!-- Default one will be cloned -->
+      <div class="question-box active">
+        <span class="remove-btn" onclick="removeQuestion(this)">×</span>
+        <h2 class="font-bold text-sm mb-2">Question Title</h2>
+        <input
+          type="text"
+          class="input input-sm input-bordered w-full mb-4"
+          placeholder="Apakah Rasa Kacang Ijo Enak?"
+        />
+        <div class="space-y-2">
+          <div class="flex items-center gap-2">
+            <input type="radio" name="option-1" />
+            <input
+              type="text"
+              class="input input-sm input-bordered w-full"
+              placeholder="Opsi 1"
+            />
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="radio" name="option-1" />
+            <input
+              type="text"
+              class="input input-sm input-bordered w-full"
+              placeholder="Opsi 2"
+            />
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="radio" name="option-1" />
+            <input
+              type="text"
+              class="input input-sm input-bordered w-full"
+              placeholder="Opsi 3"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Button -->
+    <div class="flex justify-center mb-6">
+      <button
+        onclick="addQuestion()"
+        class="btn btn-circle bg-white border border-[#b00fb3] text-[#b00fb3] text-xl hover:bg-[#b00fb3] hover:text-white"
+      >
+        +
+      </button>
+    </div>
+
+    <!-- Done Button -->
+    <!-- Trigger modal by changing from button to label -->
+    <div class="flex justify-center">
+      <label
+        for="success-modal"
+        class="btn btn-primary bg-[#b00fb3] border-none px-10"
+        >Done</label
+      >
+    </div>
+
+    <!-- Success Modal -->
+    <input type="checkbox" id="success-modal" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box text-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-16 w-16 mx-auto text-green-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+        <h3 class="font-semibold text-lg mt-4">Form Berhasil<br />Dibuat</h3>
+        <div class="modal-action justify-center mt-6">
+          <div class="modal-action justify-center mt-6">
+            <a
+              href="home.html"
+              class="btn btn-primary bg-[#b00fb3] text-white border-none px-8"
+            >
+              Kembali ke home
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function addQuestion() {
+        const container = document.getElementById("questions-container");
+        const boxes = container.querySelectorAll(".question-box");
+        boxes.forEach((box) => box.classList.remove("active"));
+
+        const lastBox = boxes[boxes.length - 1];
+        const newBox = lastBox.cloneNode(true);
+
+        // Reset inputs in cloned box
+        newBox.querySelectorAll("input").forEach((input) => {
+          if (input.type === "radio") {
+            input.checked = false;
+          } else {
+            input.value = "";
+          }
+        });
+
+        // Assign new unique name for radio group
+        const radioName = "option-" + (boxes.length + 1);
+        newBox.querySelectorAll('input[type="radio"]').forEach((radio) => {
+          radio.name = radioName;
+        });
+
+        newBox.classList.add("active");
+        container.appendChild(newBox);
+      }
+
+      function removeQuestion(el) {
+        const box = el.closest(".question-box");
+        const container = document.getElementById("questions-container");
+        if (container.children.length > 1) {
+          container.removeChild(box);
+          // Set the last one as active
+          const last = container.lastElementChild;
+          last.classList.add("active");
+        }
+      }
+    </script>
+  </body>
+</html>

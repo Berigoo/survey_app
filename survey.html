@@ -1,86 +1,136 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-    <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Daisy CSS Form Layout</title>
-	<link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
-	<script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="p-4">
-	<!-- Navbar -->
-	<div class="navbar bg-base-100 shadow-sm px-20">
-	    <div class="flex-1">
-		<a class="text-2xl font-bold text-[#B00FB3]" href="home.html"><--</a>
-	    </div>
-	</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daisy CSS Form Layout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+  </head>
 
-	<!-- Centered Header -->
-	<header class="text-center mb-8">
-            <h1 class="text-3xl font-bold">Buat Survey</h1>
-	</header>
+  <body class="p-4">
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-sm px-20">
+      <div class="flex-1">
+        <a class="text-2xl font-bold text-[#B00FB3]" href="home.html"></a>
+      </div>
+    </div>
 
-	<!-- Left-aligned Form -->
-	<form class="max-w-2xl mx-auto">
-            <!-- Image Placeholder -->
-            <div class="mb-4">
-		<div class="w-32 h-32 bg-gray-300 rounded-lg flex items-center justify-center">
-                    <span class="text-gray-500">Image Placeholder</span>
-		</div>
-            </div>
+    <!-- Centered Header -->
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-bold">Buat Survey</h1>
+    </header>
 
-            <!-- Text Input -->
-            <div class="mb-4">
-		<label class="label">
-                    <span class="label-text">Judul Survey</span>
-		</label>
-		<input type="text" placeholder="Type here" class="input input-bordered w-full" />
-            </div>
+    <!-- Left-aligned Form -->
+    <form class="max-w-2xl mx-auto">
+      <!-- Image Placeholder -->
+      <div class="mb-4 text-center">
+        <div
+          class="w-32 h-32 bg-gray-300 rounded-lg flex items-center justify-center mx-auto"
+        >
+          <span class="text-gray-500">Image Placeholder</span>
+        </div>
+      </div>
 
-            <!-- Select Input -->
-            <div class="mb-4 w-80">
-		<label class="label">
-                    <span class="label-text">Kategori</span>
-		</label>
-		<select class="select select-bordered w-full">
-                    <option disabled selected>Choose an option</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
-		</select>
-            </div>
+      <!-- Text Input -->
+      <div class="mb-4">
+        <label class="label">
+          <span class="label-text">Judul Survey</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Type here"
+          class="input input-bordered w-full border-[#B00FB3] rounded-xl focus:border-[#B00FB3] focus:outline-none"
+        />
+      </div>
 
-            <!-- Large Text Input -->
-            <div class="mb-4">
-		<label class="label">
-                    <span class="label-text">Deskripsi Survey</span>
-		</label>
-		<textarea class="textarea textarea-bordered w-full" placeholder="Type here"></textarea>
-            </div>
+      <!-- Select Input -->
+      <div class="mb-4 w-80">
+        <label class="label">
+          <span class="label-text">Kategori</span>
+        </label>
+        <select
+          class="select select-bordered w-full border-[#B00FB3] rounded-xl focus:border-[#B00FB3] focus:outline-none"
+        >
+          <option disabled selected>Choose an option</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
 
-            <!-- Slider -->
-            <div class="mb-4 w-80">
-		<label class="label">
-                    <span class="label-text">Jumlah Responden</span>
-		</label>
-		<div class="flex mb-8 items-left">
-		    <input type="range" min="0" max="100" value="50" class="range range-[#B00FB3]]"/>
-		    <span>50</span>
-		</div>
-            </div>
+      <!-- Large Text Input -->
+      <div class="mb-4">
+        <label class="label">
+          <span class="label-text">Deskripsi Survey</span>
+        </label>
+        <textarea
+          class="textarea textarea-bordered w-full border-[#B00FB3] rounded-xl focus:border-[#B00FB3] focus:outline-none"
+          placeholder="Type here"
+        ></textarea>
+      </div>
 
-            <!-- Checkbox -->
-            <div class="mb-8">
-		<label class="label cursor-pointer justify-start gap-2">
-                    <input type="checkbox" checked="checked" class="checkbox checkbox-[#B00FB3]" />
-                    <span class="label-text">Give Rewards</span>
-		</label>
-            </div>
+      <!-- Slider -->
+      <div class="mb-4 w-80">
+        <label class="label">
+          <span class="label-text">Jumlah Responden</span>
+        </label>
+        <div class="flex mb-8 items-center gap-4">
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+            style="accent-color: #b00fb3"
+            oninput="updateDisplay(this.value)"
+          />
+          <span id="slider-value">50</span>
+        </div>
+      </div>
 
-            <!-- Right-aligned Submit Button -->
-            <div class="flex justify-end">
-		<button class="btn bg-[#B00FB3] text-white"><a href="reward.html">Next</a></button>
-            </div>
-	</form>
-    </body>
+      <!-- Checkbox -->
+      <div class="mb-8">
+        <label class="label cursor-pointer justify-start gap-2">
+          <input
+            type="checkbox"
+            checked="checked"
+            class="checkbox checkbox-[#B00FB3]"
+          />
+          <span class="label-text">Give Rewards</span>
+        </label>
+      </div>
+
+      <!-- Right-aligned Submit Button -->
+      <div class="flex justify-end">
+        <button class="btn btn-primary text-white">
+          <a href="reward.html">Next</a>
+        </button>
+      </div>
+    </form>
+    <script>
+      function updateDisplay(value) {
+        const slider = document.querySelector('input[type="range"]');
+        const percentage =
+          ((value - slider.min) / (slider.max - slider.min)) * 100;
+
+        document.getElementById("slider-value").innerText =
+          parseInt(value).toLocaleString("id-ID");
+
+        // Update slider background
+        slider.style.background = `linear-gradient(to right, #b00fb3 0%, #b00fb3 ${percentage}%, #e5e7eb ${percentage}%, #e5e7eb 100%)`;
+      }
+
+      // Initialize on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        const slider = document.querySelector('input[type="range"]');
+        updateDisplay(slider.value);
+      });
+    </script>
+  </body>
 </html>

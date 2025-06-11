@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F9F9F9]">
+
+    <div class="navbar shadow-sm px-6 md:px-20 text-white shadow">
+        <!-- Logo - Left -->
+        <div class="flex-none">
+            <a class="text-2xl font-bold text-[#B00FB3]">
+                IsiK<span class="text-yellow-400">✓</span>
+            </a>
+        </div>
+
+        <!-- Navigation - Center -->
+        <div class="hidden md:flex flex-1 gap-6 items-center justify-center">
+            <a href="../home.html" class="tab !text-[#B00FB3]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 9.75L12 3l9 6.75M4.5 10.5v7.5A1.5 1.5 0 006 19.5h12a1.5 1.5 0 001.5-1.5v-7.5" />
+                </svg>
+                Home
+            </a>
+            <a href="../reward.html" class="tab !text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12.75A9 9 0 113 12.75 9 9 0 0121 12.75z" />
+                </svg>
+                Reward
+            </a>
+            <a href="../profile.html" class="tab !text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5.121 17.804A10.97 10.97 0 0112 15c2.042 0 3.937.613 5.505 1.657M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Profile
+            </a>
+        </div>
+
+        <!-- Logout - Right -->
+        <div class="flex-none">
+            <a href="login.html" class="tab !text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="px-4 md:px-20 p-6">
+        <h1 class="text-3xl text-center font-bold mb-6">Survey Kepuasan terhadap Kinerja IT Support di Unsika</h1>
+
+        <!-- Survey Card -->
+        <div class="max-w-xl mx-auto bg-white mt-10 rounded-xl shadow-md p-8">
+            <h2 class="text-2xl font-bold mb-4" id="question-title">Pertanyaan 1</h2>
+            <p class="text-gray-700 mb-6" id="question-text">Apakah rasa kacang ijo enak?</p>
+            <hr class="mb-6">
+
+            <!-- Form -->
+            <form id="survey-form">
+                <div id="choices-container" class="mb-6 space-y-4">
+                    <!-- Jawaban pilihan akan dimuat via JS -->
+                </div>
+
+                <!-- Tombol -->
+                <div class="flex justify-between items-center">
+                    <button type="submit"
+                        class="bg-[#B00FB3] hover:bg-pink-600 text-white font-semibold px-6 py-2 rounded-md">
+                        Next Question
+                    </button>
+                    <p class="text-sm text-gray-600" id="progress-text">Remaining Question 1 / 3</p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script>
+        const questions = [{
+                title: "Pertanyaan 1",
+                text: "Apakah rasa kacang ijo enak?",
+                options: ["Enak", "Biasa aja", "Gak Enak"],
+                name: "rasa"
+            },
+            {
+                title: "Pertanyaan 2",
+                text: "Bagaimana kecepatan respon IT Support?",
+                options: ["Sangat Cepat", "Cukup Cepat", "Lambat"],
+                name: "respon"
+            },
+            {
+                title: "Pertanyaan 3",
+                text: "Apakah Anda puas dengan pelayanan secara keseluruhan?",
+                options: ["Sangat Puas", "Puas", "Tidak Puas"],
+                name: "kepuasan"
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        const questionTitle = document.getElementById("question-title");
+        const questionText = document.getElementById("question-text");
+        const choicesContainer = document.getElementById("choices-container");
+        const progressText = document.getElementById("progress-text");
+        const form = document.getElementById("survey-form");
+
+        function renderQuestion(index) {
+            const q = questions[index];
+            questionTitle.textContent = q.title;
+            questionText.textContent = q.text;
+            progressText.textContent = `Remaining Question ${index + 1} / ${questions.length}`;
+
+            choicesContainer.innerHTML = "";
+            q.options.forEach((option, i) => {
+                const id = `${q.name}_${i}`;
+                const html = `
+          <label class="flex items-center gap-3">
+            <input type="radio" id="${id}" name="${q.name}" value="${option}"
+              class="h-5 w-5 border-2 border-[#B00FB3] appearance-none rounded-full checked:bg-[#B00FB3] checked:border-[#B00FB3] focus:outline-none transition" />
+            <span>${option}</span>
+          </label>
+        `;
+                choicesContainer.insertAdjacentHTML("beforeend", html);
+            });
+        }
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                renderQuestion(currentQuestion);
+            } else {
+                document.body.classList.add("bg-black", "bg-opacity-50", "h-screen");
+                document.querySelector("main").innerHTML = `
+                
+  <div class="max-w-sm mx-auto bg-[#f9f8f4] mt-20 rounded-xl shadow-md p-8 text-center">
+    <h2 class="text-2xl font-bold text-black mb-6">Rasa Kacang Ijo</h2>
+
+    <svg class="w-20 h-20 mx-auto mb-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+    </svg>
+
+    <div class="flex items-center justify-center text-green-500 text-xl font-semibold mb-6">
+      <img src="https://img.icons8.com/emoji/48/000000/coin-emoji.png" class="w-6 h-6 mr-2" alt="coin" />
+      + IDR 10.000
+    </div>
+
+    <button 
+      type="button" 
+      class="bg-[#B00FB3] text-white font-medium py-2 px-4 rounded-xl hover:bg-purple-700 transition"
+      onclick="window.location.href='../home.html'"
+    >
+      Kembali ke home
+    </button>
+  </div>
+`;
+
+            }
+        });
+
+        // Load pertanyaan pertama
+        renderQuestion(currentQuestion);
+    </script>
+</body>
+
+</html>
