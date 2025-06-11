@@ -48,7 +48,7 @@
   </div>
 
   <!-- List Cards -->
-  <div class="px-6 mt-6 space-y-4">
+  <div class="px-6 mt-6 space-y-4" id="items_container">
     <!-- Card 1 (Selected) -->
     <div class="card card-bordered border-[#B00FB3] bg-white shadow rounded-lg p-4">
       <div class="flex gap-4">
@@ -131,6 +131,58 @@
     </a>
   </button>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  
-  </body>
+
+  <script>
+   if (localStorage.getItem('surveys') == null){
+       localStorage.setItem('surveys', JSON.stringify([]));
+   }else {
+       const container = document.getElementById('items_container');
+
+       const surveys = JSON.parse(localStorage.getItem('surveys'));
+
+       surveys.forEach((s) => {
+	   const el = `    <div class="card bg-white shadow rounded-lg p-4">
+      <div class="flex gap-4">
+        <img src="https://source.unsplash.com/80x80/?laptop" class="rounded-xl w-24 h-24 object-cover" />
+        <div class="flex flex-col justify-between flex-1">
+          <div>
+            <h2 class="card-title text-base text-gray-800" id="title">Survey Kepuasan Terhadap Kinerja IT Support di Unsika</h2>
+            <p class="text-sm text-gray-600 mt-1" id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+          </div>
+          <div class="flex items-center gap-4 mt-2 text-sm text-gray-600">
+            <div class="flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span id="respondens_count">50/100</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-[#B00FB3] font-semibold" id="reward">IDR10.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+	   const formatter = new Intl.NumberFormat('en-US', {
+	       style: 'currency',
+	       currency: 'IDR',
+	   });
+	   
+	   const parser = new DOMParser();
+	   const doc = parser.parseFromString(el, 'text/html');
+	   doc.getElementById('title').textContent = s.title;
+	   doc.getElementById('desc').textContent = s.description;
+	   doc.getElementById('respondens_count').textContent = '0/' + s.respondens;
+	   if (s.isReward){
+	       doc.getElementById('reward').textContent = 'IDR' + formatter.format(Number((s.amount / s.respondens).toFixed(2)));
+	   }else {
+	       doc.getElementById('reward').textContent = '-';
+	   }
+
+	   container.appendChild(doc.body.firstChild);
+       });
+   }
+  </script>
+    </body>
 </html>
